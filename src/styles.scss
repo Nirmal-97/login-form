@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+// #pad{
+//     padding: 100px,200px;
+// }
+
+
+label{
+    font-size: 24px;
+}
+
+
+input{
+    border-radius:  10px;
+}
+
+.cards{
+    background-color: #000;
+    padding: 30px;
+    margin: auto;
+    border-radius: 20px !important;
+
+}
+
+button{
+    width: 200px;
+}
