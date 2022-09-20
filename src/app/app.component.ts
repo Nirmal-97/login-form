@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
+  
 export class AppComponent {
   loginForm!: FormGroup;
   apiUrl = environment.apiurl;
@@ -28,15 +29,17 @@ export class AppComponent {
   ngOnInit() {
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [
-        Validators.required,
-        Validators.minLength(6),
+      password: new FormControl('', [Validators.required, Validators.minLength(6),
       ]),
     });
   }
 
   get email() {
     return this.loginForm.get('email');
+  }
+
+  get password() {
+    return this.loginForm.get('password');
   }
 
   submitForm() {
@@ -48,11 +51,13 @@ export class AppComponent {
     this.httpClient.post(`${this.apiUrl}/v1/login`, onSubmit).subscribe(
       () => {
         this.show = true;
-        this.router.navigate(['dashboard']);
+        this.router.navigate(['dashboard']
+        );
       },
       (error: string) => {
         this.toastr.error('Invalid Email or Password.');
       }
     );
+
   }
 }
