@@ -19,7 +19,8 @@ export class AppComponent {
   loginForm!: FormGroup;
   apiUrl = environment.apiurl;
   show = false;
-
+  alertText = "Please enter your email";
+  
   constructor(
     public httpClient: HttpClient,
     private toastr: ToastrService,
@@ -33,6 +34,7 @@ export class AppComponent {
       ]),
     });
   }
+
 
   get email() {
     return this.loginForm.get('email');

@@ -1,46 +1,50 @@
-<div *ngIf="!show" class="mt-5">
+<div *ngIf="!show" style="margin-top: 12%;">
   <div class="d-flex flex-column align-items-center">
-    <div class="card">
+    <div class="card bg-color">
       <div class="card-header">
-        <h1 class="text-center">Login Form</h1>
+        <h1 class="text-center">Login</h1>
       </div>
       <form class="card-body" [formGroup]="loginForm" (submit)="submitForm()">
         <div class="form-group">
           <div class="">
-            <label for="email" class="mb-3 mt-3"> Mail Id </label><br />
+            <label for="email" class="mb-3 mt-3"></label><br />
 
             <input
               type="email"
-              class="form-control"
+              class="form-control "
               style="width: 500px"
-              placeholder="Enter your mail id"
+              placeholder="Email"
               formControlName="email"
             />
             <div>
-              <span
+
+              <p *ngIf="">{{alertText}}</p>
+              
+                <span
                 class="help-block"
-                style="color: red"
-                *ngIf="email && email.invalid && email.touched"
-                >* Please enter a valid email id</span
-              >
+                style="color:white"
+                *ngIf="email && email.invalid"
+                >Please enter a valid email </span
+              > 
+
             </div>
 
-            <label for="password" class="mb-3 mt-3"> Password </label><br />
+            <label for="password" class="mb-3 mt-3"></label><br />
 
             <input
               type="password"
               class="form-control"
               style="width: 500px"
-              placeholder="Enter your password"
+              placeholder="Password"
               formControlName="password"
             />
 
              <div>
               <span
                 class="help-block"
-                style="color: red"
+                style="color:white"
                 *ngIf="password && password.invalid && password.touched"
-                >* Please enter your password</span
+                >Please enter your password</span
               >
             </div>
           </div>
