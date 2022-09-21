@@ -20,7 +20,7 @@ export class AppComponent {
   apiUrl = environment.apiurl;
   show = false;
   alertText = "Please enter your email";
-  
+
   constructor(
     public httpClient: HttpClient,
     private toastr: ToastrService,

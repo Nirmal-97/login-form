@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ToastNoAnimationModule, ToastrModule } from 'ngx-toastr';
 import { DashbordComponent } from './dashbord/dashbord.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [AppComponent, DashbordComponent],
   imports: [
@@ -16,7 +15,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FontAwesomeModule,
     ToastrModule.forRoot(),
     ToastNoAnimationModule.forRoot(),
   ],

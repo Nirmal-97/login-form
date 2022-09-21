@@ -1,4 +1,4 @@
-<div *ngIf="!show" style="margin-top: 12%;">
+<div *ngIf="!show" style="margin-top: 12%">
   <div class="d-flex flex-column align-items-center">
     <div class="card bg-color">
       <div class="card-header">
@@ -11,22 +11,23 @@
 
             <input
               type="email"
-              class="form-control "
+              class="form-control fa-solid fa-envelope"
               style="width: 500px"
               placeholder="Email"
               formControlName="email"
+              
             />
             <div>
-
-              <p *ngIf="">{{alertText}}</p>
+              <p *ngIf="loginForm.value['email'] == ''">
+                {{ alertText }}
+              </p>
               
-                <span
+              <span
                 class="help-block"
-                style="color:white"
-                *ngIf="email && email.invalid"
-                >Please enter a valid email </span
-              > 
-
+                style="color: white"
+                *ngIf="loginForm.controls['email'].errors?.['email']"
+                >Please enter a valid email
+              </span>
             </div>
 
             <label for="password" class="mb-3 mt-3"></label><br />
@@ -39,10 +40,10 @@
               formControlName="password"
             />
 
-             <div>
+            <div>
               <span
                 class="help-block"
-                style="color:white"
+                style="color: white"
                 *ngIf="password && password.invalid && password.touched"
                 >Please enter your password</span
               >
@@ -64,5 +65,5 @@
 </div>
 
 <div *ngIf="show">
-   <router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </div>
