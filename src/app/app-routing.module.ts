@@ -5,7 +5,7 @@ import { DashbordComponent } from './dashbord/dashbord.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'login',
     component: AppComponent,
   },
   {

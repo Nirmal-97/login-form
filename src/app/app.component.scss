@@ -1,1 +1,18 @@
 @import '~ngx-toastr/toastr';
+
+.input-passwords{
+    position: absolute;
+}
+
+.codes{
+    position: relative;
+    top: 20px;
+}
+
+.eye{
+color: darkblue;
+position: relative;
+left: 470px;
+top: 9px;
+cursor: pointer;
+}

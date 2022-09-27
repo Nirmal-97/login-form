@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
-
+import { faEye } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -20,6 +20,9 @@ export class AppComponent {
   show = false;
   alertText = 'Please enter your email';
   alertTextPassword = 'Please enter your password';
+  faEye = faEye;
+  visible: boolean = true;
+  changeType: boolean = true;
 
   constructor(
     public httpClient: HttpClient,
@@ -34,9 +37,7 @@ export class AppComponent {
         Validators.email,
         Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
       ]),
-      password: new FormControl('', [
-        Validators.required
-      ]),
+      password: new FormControl('', [Validators.required]),
     });
   }
 
@@ -63,5 +64,13 @@ export class AppComponent {
         this.toastr.error('Invalid Email or Password.');
       }
     );
+    this.router.navigate(['path/to']).then(() => {
+      window.location.reload();
+    });
+  }
+
+  viewPass() {
+    this.visible = !this.visible;
+    this.visible = !this.changeType;
   }
 }
